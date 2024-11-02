@@ -1,6 +1,6 @@
 import Navbar from "../../components/Navbar/navbar"
 
-function Index() {
+function Login() {
     return (
         <>
             <Navbar />
@@ -39,4 +39,4 @@ function Index() {
     )
 }
 
-export default Index
+export default Login
