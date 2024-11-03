@@ -12,7 +12,7 @@ export const registerUser = async (req, res) => {
             addUser(username, email, hashedPassword)
             res.send({ success: true, error: false, successMessage: "Account registered." })
         } else {
-            res.send({ success: false, error: true, errorType: "email", errorEmail: "That email is already taken." })
+            res.send({ success: false, error: true, errorType: "email", errorMessage: "That email is already taken." })
         }
     } else {
         res.send({ success: false, error: true, errorType: "username", errorMessage: "That username is already taken." })

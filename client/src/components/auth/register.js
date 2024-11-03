@@ -22,7 +22,17 @@ function RegisterForm() {
                 password: password,
             });
             axios.post("http://localhost:8000/auth/register-user", userDetails, config)
-                .then(console.log("sent"));
+                .then(data => {
+                    let res = data.data
+                    if(!res.success && res.error) {
+                        toast.error(res.errorMessage)
+                    } else {
+                        toast.success(res.successMessage)
+                        setUsername("")
+                        setEmail("")
+                        setPassword("")
+                    }
+                });
         } else {
             toast.error("Password must contain 6 or more characters!")
         }
